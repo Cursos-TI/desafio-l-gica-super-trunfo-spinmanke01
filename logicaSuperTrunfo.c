@@ -6,6 +6,8 @@ int main(){
   int pturisticos1, pturisticos2;
   float area1, area2, pib1, pib2;
   int resulpop, resulptursticos, resularea, resulpib, resulpibpcapita, resuldpopulacional, resulsuperpoder;
+  int option;
+  char continuar;
   // calculáveis
   float pibpercapita1, pibpercapita2, dpopulacional1, dpopulacional2;
   float superpodera, superpoderb;
@@ -90,79 +92,153 @@ printf("Super Poder: ???\n");
  printf("\n");
 
  // Implementação de Estruturas de comparação
+// Implementação Menu interativo/ Uso do switch
+do {
+printf("== Escolha os atributos a serem comparados! ==\n");
+printf("\n");
 
- printf(" __População__ \n");
- printf("Cidade 1:%lu habitantes\n", pop1);
- printf("Cidade 2:%lu habitantes\n", pop2);
-  if(pop1 > pop2) {
-    printf("Cidade 1 venceu!\n");
-  }else{
-    printf("Cidade 2 venceu!\n");
+printf("Cidade 1: Rio de janeiro  Cidade 2: São Paulo\n");
+
+printf("1. Comparar população\n");
+printf("2. Comparar Área\n");
+printf("3. Comparar PIB\n");
+printf("4. Comparar Pontos Turísticos\n");
+printf("5. Comparar PIB per Capita\n");
+printf("6. Comparar Densidade Populacional\n");
+printf("7. Comparar Super poder\n");
+printf("0. Sair\n");
+scanf("%d", &option);
+switch (option)
+{
+case 1:
+printf("Cidade 1:%lu\n", pop1);
+printf("Cidade 2:%lu\n", pop2);
+printf("\n");
+   if (pop1 > pop2)
+{
+    printf("Cidade 1 Venceu!");
+} else if (pop1 == pop2)
+{
+    printf("Empate!");
+} else 
+{
+  printf("Cidade 2 Venceu!");
+
+}
+  break;
+
+  case 2:
+printf("Cidade 1:%.2f\n", area1);
+printf("Cidade 2:%.2f\n", area2);
+printf("\n");
+   if (area1 > area2)
+{
+    printf("Cidade 1 Venceu!");
+} else if (area1 == area2)
+{
+    printf("Empate!");
+} else 
+{
+  printf("Cidade 2 Venceu!");
+
+}
+break;
+  case 3:
+printf("Cidade 1:%.2f\n", pib1);
+printf("Cidade 2:%.2f\n", pib2);
+printf("\n");
+   if (pib1 > pib2)
+{
+    printf("Cidade 1 Venceu!");
+} else if (pib1 == pib2)
+{
+    printf("Empate!");
+} else 
+{
+  printf("Cidade 2 Venceu!");
+
+}
+ break;
+  case 4:
+printf("Cidade 1:%d\n", pturisticos1);
+printf("Cidade 2:%d\n", pturisticos2);
+printf("\n");
+   if (pturisticos1 > pturisticos2)
+{
+    printf("Cidade 1 Venceu!");
+} else if (pturisticos1 == pturisticos2)
+{
+    printf("Empate!");
+} else 
+{
+  printf("Cidade 2 Venceu!");
+
+}
+ break;
+ case 5:
+printf("Cidade 1:%.2f\n", pibpercapita1);
+printf("Cidade 2:%.2f\n", pibpercapita2);
+printf("\n");
+   if (pibpercapita1 > pibpercapita2)
+{
+    printf("Cidade 1 Venceu!");
+} else if (pibpercapita1 == pibpercapita2)
+{
+    printf("Empate!");
+} else 
+{
+  printf("Cidade 2 Venceu!");
+
+}
+ break;
+ case 6:
+printf("Cidade 1:%.2f\n", dpopulacional1);
+printf("Cidade 2:%.2f\n", dpopulacional2);
+printf("\n");
+   if (dpopulacional2 > dpopulacional1)
+{
+    printf("Cidade 1 Venceu!");
+} else if (dpopulacional2 == dpopulacional1)
+{
+    printf("Empate!");
+} else 
+{
+  printf("Cidade 2 Venceu!");
+
+}
+ break;
+ case 7:
+printf("Cidade 1:%.2f\n", superpodera);
+printf("Cidade 2:%.2f\n", superpoderb);
+printf("\n");
+   if (superpodera > superpoderb)
+{
+    printf("Cidade 1 Venceu!");
+} else if (superpodera == superpoderb)
+{
+    printf("Empate!");
+} else 
+{
+  printf("Cidade 2 Venceu!");
+
+}
+ break;
+ case 0:
+ printf("Saindo...\n");
+break;
+ 
+default:
+printf("Opção Inválida! Tente novamente.\n");
+continue;
+    } 
+  if (option != 0)
+  {
+    printf("\nDeseja comparar outro atributo? (s/n): ");
+            scanf(" %c", &continuar);
   }
-  printf("\n");
-
-  printf(" __Área__ \n");
- printf("Cidade 1:%.2fkm²\n", area1);
- printf("Cidade 2:%.2fkm²\n", area2);
-  if(area1 > area2) {
-    printf("Cidade 1 venceu!\n");
-  }else{
-    printf("Cidade 2 venceu!\n");
-  }
-  printf("\n");
-
-  printf(" __Pontos Turísticos__\n");
- printf("Cidade 1:%d pontos turisticos\n", pturisticos1);
- printf("Cidade 2:%d pontos turisticos\n", pturisticos2);
-  if (pturisticos1 > pturisticos2) {
-    printf("Cidade 1 venceu!\n");
-  }else{
-    printf("Cidade 2 venceu!\n");
-  }
-  printf("\n");
-
-  printf(" __PIB__\n");
- printf("Cidade 1:$%.2f\n", pib1);
- printf("Cidade 2:$%.2f\n", pib2);
-  if(pib1 > pib2) {
-    printf("Cidade 1 venceu!\n");
-  }else{
-    printf("Cidade 2 venceu!\n");
-  }
-  printf("\n");
-
-  printf("__PIB per Capita__\n");
- printf("Cidade 1:$%.2f\n", pibpercapita1);
- printf("Cidade 2:$%.2f\n", pibpercapita2);
-  if(pibpercapita1 > pibpercapita2) {
-    printf("Cidade 1 venceu!\n");
-  }else{
-    printf("Cidade 2 venceu!\n");
-  }
-  printf("\n");
-
-  printf("__Densidade Populacional__\n");
- printf("Cidade 1:%.2fhab/km²\n", dpopulacional1);
- printf("Cidade 2:%.2fhab/km²\n", dpopulacional2);
-  if(dpopulacional1 < dpopulacional2) {
-    printf("Cidade 1 venceu!\n");
-  }else{
-    printf("Cidade 2 venceu!\n");
-  }
-  printf("\n");
-
-  printf("__SuperPoder__\n");
- printf("Cidade 1:%.2f de SuperPoder\n", superpodera);
- printf("Cidade 2:%.2f de SuperP42141oder\n", superpoderb);
-  if(superpodera > superpoderb) {
-    printf("Cidade 1 venceu!\n");
-  }else{
-    printf("Cidade 2 venceu!\n");
-  }
-  printf("\n");
-
-
-
+} while (option != 0 && (continuar == 's' || continuar == 'S'));
+  
+  
 return 0;
 
  }
